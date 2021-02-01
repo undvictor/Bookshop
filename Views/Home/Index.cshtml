@@ -1,0 +1,81 @@
+﻿@model HomeViewModel
+
+<main class="">
+
+	<section class="py-5 text-center  parallax" id="parallax1">
+		<div class="row py-lg-5">
+			<div class="col-lg-6 col-md-8 mx-auto">
+
+
+				 <i class="bi bi-book-fill" style="font-size: 10rem; color: floralwhite;"></i>
+				<h1 class="text-white" style="font-size: 5rem;">Bokbutiken</h1>
+
+			</div>
+		</div>
+	</section>
+
+	<div class="album py-5 bg-light">
+		<div class="container">
+			<h1>Selected Works</h1>
+            <div class="row row-cols-1 row-cols-sm-3 row-cols-md-3 g-3">
+				@foreach (var book in Model.BooksOfTheWeek)
+                {
+					<partial name="_BookCard" model="book" />
+                }
+
+            </div>
+		</div>
+</div>
+		
+	<div class="container">
+
+		<div class="row align-items-center h-100  border-bottom">
+			<div class="col-lg-6 col-md-12 col-sm-12 mx-auto">
+				<partial name="_carousel"  />
+			</div>
+			<div class="col-lg-6 col-md-12 col-sm-12 mx-auto ">
+				<h1>Welcome to <b>Bokbutiken</b></h1>
+				<p>The modern classics of today is the antiquities of tomorrow. At some point art stops being art and moves on to the state of art-history. We focus on litterature on the limit, because the eternal question is, when does that happen?</p>
+				<a asp-controller="Book" asp-action="List">
+				<button type="button" class="btn btn-danger float-right mb-2">GO SHOP</button>
+				</a>
+			</div>
+		</div>
+	
+	</div>
+
+
+	<section class="py-5 text-center  parallax" id="parallax2">
+		<div class="row py-lg-5">
+			
+			<div class="col-lg-6 col-md-6 mx-auto "style=" background:white; opacity:0.8; border:1px solid; padding:10px; " >
+				<h1>BASED IN MALMÖ</h1>
+				<h2>DELIVERS TO THE WORLD </h2>
+				<p class="lead text-body"><b>Since 1983 Bokbutiken has been selling early editions of litterature for a good price. If you are interested in our shipment solutions just contact us.</b></p>
+			
+					 
+					   <a asp-controller="Contact" asp-action="Index"
+					   class="btn btn-primary">Write us!</a>
+
+			</div>
+		</div>
+	</section>
+
+
+</main>
+
+
+		<!--
+	<partial name="_Carousel" />
+
+
+
+	<h2>Pies of the week</h2>
+	<h4>Our weekly selection - just for you!</h4>
+
+	<div class="row">
+
+
+
+	</div>
+	-->

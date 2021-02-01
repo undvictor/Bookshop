@@ -1,0 +1,36 @@
+﻿@model Book
+
+
+
+
+
+<div class=" bg-light min-vh-100 ">
+	<div class="container col-8" style="float:none; margin:0 auto;">
+		<a class="nav-link" asp-controller="Book" asp-action="List"><i class="bi bi-arrow-90deg-left"></i><h6> Back to books </h6></a>
+		<h1>@Model.Name</h1>
+		<br/>
+		<div class="row row-cols-1 row-cols-sm-3 row-cols-md-3 g-3 text-center" style="background:white; padding:15px; border:1px solid black;">
+
+			<div class="caption-full">
+			<img src="~/img/@Model.ImageUrl" />
+
+
+				<h4>
+					@Model.Name by @Model.ShortDescription @if (Model.IsBookOfTheWeek)
+
+					{
+				<span class="badge badge-danger">New</span>}
+				</h4> 
+				<p class="text-left">@Model.LongDescription</p>
+				<div class="addToCart">
+				<h3 class="pull-right" style="padding-left:10px;">@Model.Price kr</h3>
+					<p class="pull-right button">
+						<a class="btn btn-success" asp-controller="ShoppingCart" asp-action="AddToShoppingCart"
+						   asp-route-bookId="@Model.BookId"><i class="bi bi-cart-plus"> Add to cart </i></a>
+					</p>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	</div>

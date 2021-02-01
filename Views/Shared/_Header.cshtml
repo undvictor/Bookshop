@@ -1,0 +1,36 @@
+﻿<div class="container">
+	<nav class="navbar navbar-expand-lg navbar-light rounded" aria-label="Eleventh navbar example">
+		<div class="container-fluid">
+			<a class="navbar-brand" style="padding-top: 0;" asp-controller="Home" asp-action="Index"><i class="bi bi-book-fill" style="font-size: 2rem; color: darkslategrey;"></i></a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarsExample09">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item ">
+						<a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
+					</li>	
+					<li class="nav-item ">
+						<a class="nav-link" asp-controller="Book" asp-action="List">Books</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" asp-controller="Contact" asp-action="Index">Contact</a>
+					</li>
+
+
+
+				</ul>
+
+			</div>
+					<partial name="_LoginPartial" />
+					@await Component.InvokeAsync("ShoppingCartSummary")
+					<div class="template-demo" style="padding-top:0;float:right;">
+					<button type="button" class="btn btn-social-icon btn-outline-facebook"><i class="fa fa-facebook"></i></button>
+					<button type="button" class="btn btn-social-icon btn-outline-instagram"><i class="fa fa-instagram"></i></button>
+					</div>
+
+		</div>
+	</nav>
+</div>
+
